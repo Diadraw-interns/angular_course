@@ -1,0 +1,8 @@
+<div class="p-2 gap-2 rounded border flex items-center">
+    <button type="button" class="bg-slate-700 border px-3 py-1 rounded shadow-md text-white"
+        (click)="onChangeFilter('All')">All</button>
+    @for (course of courses; track $index) {
+    <button type="button" class="bg-slate-700 border px-3 py-1 rounded shadow-md text-white"
+        (click)="onChangeFilter(course.id)">{{course.name}}</button>
+    }
+</div>

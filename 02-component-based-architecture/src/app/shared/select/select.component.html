@@ -1,0 +1,10 @@
+<select class="w-full border border-black rounded" (change)="onSelectionChange($event)">
+    @for (option of options; track $index) {
+    <ng-container [ngTemplateOutlet]="selectTemplate || defaultOptions"
+        [ngTemplateOutletContext]="{$implicit: option,index: $index}"></ng-container>
+    }
+</select>
+
+<ng-template #defaultOptions let-option>
+    <option [value]="option.value" [selected]="option.value === value? 'selected':''">{{option.label}}</option>
+</ng-template>

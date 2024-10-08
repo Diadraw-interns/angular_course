@@ -1,0 +1,5 @@
+<nav class="flex gap-4 justify-end py-5 px-10 bg-slate-300 font-semibold">
+    @for (route of routes; track $index) {
+    <a [routerLink]="route.path" routerLinkActive="text-red-400" class="hover:underline">{{route.label}}</a>
+    }
+</nav>

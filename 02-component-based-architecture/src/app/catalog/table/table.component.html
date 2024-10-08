@@ -1,0 +1,20 @@
+<table class="border w-full text-left">
+    <thead class="divide-y divide-gray-200">
+        <tr class="bg-gray-100 divide-x">
+            <th class="p-2">Course</th>
+            <th class="p-2">Description</th>
+            <th class="p-2">Professor</th>
+            <th class="p-2">Duration( in days )</th>
+        </tr>
+    </thead>
+    <tbody class="bg-white divide-y divide-gray-200">
+        @for (classData of classesData; track $index) {
+        <tr class="divide-x">
+            <td class="p-2">{{classData.course.name}}</td>
+            <td class="p-2">{{classData.course.description}}</td>
+            <td class="p-2">{{classData.professor}}</td>
+            <td class="p-2">{{classData.durationDays}}</td>
+        </tr>
+        }
+    </tbody>
+</table>

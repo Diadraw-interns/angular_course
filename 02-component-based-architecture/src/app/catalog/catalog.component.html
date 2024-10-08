@@ -1,0 +1,4 @@
+<div class="flex flex-col gap-5">
+    <app-catalog-filter [courses]="coursesData" (changeFilter)="onFilterClasses($event)"></app-catalog-filter>
+    <app-catalog-table [classesData]="classesData"></app-catalog-table>
+</div>
