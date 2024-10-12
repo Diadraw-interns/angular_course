@@ -1,1 +1,11 @@
-<p>list works!</p>
+@for (item of items; track item.id) {
+<app-list-item [data]="item">
+    <!-- <ng-template #title let-title>
+        <h1 class="text-2xl bold">{{title}}</h1>
+    </ng-template>
+    
+    <ng-template #description let-t>
+        <h1 class="text-sm">{{t}}</h1>
+    </ng-template> -->
+</app-list-item>
+}

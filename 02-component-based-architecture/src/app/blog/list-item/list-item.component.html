@@ -1,0 +1,27 @@
+<div class="border border-black rounded p-2 w-fit flex flex-col gap-4">
+    <div class="flex-1 rounded-sm overflow-hidden">
+        <!-- image outlet -->
+        <ng-container [ngTemplateOutlet]="imageRef || defaultOptions"
+            [ngTemplateOutletContext]="{ $implicit: data.imageHref }"></ng-container>
+
+        <ng-template #defaultOptions let-image>
+            <img [src]="image" />
+        </ng-template>
+    </div>
+    <div class="flex-1 flex flex-col gap-2">
+        <!-- title outlet -->
+        <ng-container [ngTemplateOutlet]="titleRef || defaultTitle"
+            [ngTemplateOutletContext]="{ $implicit: data.title }"></ng-container>
+
+        <ng-template #defaultTitle let-title>
+            <h1>{{ title }}</h1>
+        </ng-template>
+
+        <!-- description outlet -->
+        <ng-container [ngTemplateOutlet]="descriptionRef || defaultDescriptionRef"
+            [ngTemplateOutletContext]="{ $implicit: data.description }"></ng-container>
+        <ng-template #defaultDescriptionRef let-description>
+            <p>{{ description }}</p>
+        </ng-template>
+    </div>
+</div>

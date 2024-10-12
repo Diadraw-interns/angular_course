@@ -4,11 +4,11 @@
     <ng-template [ngComponentOutlet]="widget.component" [ngComponentOutletInputs]="widget.inputs" />
     }
 
-
     <app-select [options]="options" [value]="selectedOption">
         <ng-template #selectTemplate let-option let-index="index">
             <option [value]="option.value" [selected]="option.value === selectedOption">
-                {{index}}-{{option.label}}</option>
+                {{index}}-{{option.label}}
+            </option>
         </ng-template>
     </app-select>
 </div>
