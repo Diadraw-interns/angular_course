@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { profileWidgets } from './data';
 import {
   SelectComponent,
+  SelectItemDirective,
   SelectOption,
 } from '../shared/select/select.component';
 
@@ -14,7 +15,7 @@ const widgetKeys: { [widgetId: string]: Type<any> } = {
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule, SelectComponent],
+  imports: [CommonModule, SelectComponent,SelectItemDirective],
   templateUrl: './profile.component.html',
 })
 export class ProfileComponent {
