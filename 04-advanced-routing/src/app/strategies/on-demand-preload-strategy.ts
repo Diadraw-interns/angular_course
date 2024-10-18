@@ -32,7 +32,6 @@ export class OnDemandPreloadStrategy implements PreloadingStrategy {
 
   private preloadCheck(route: Route, preloadOptions: OnDemandPreloadOptions) {
     return (
-      // route?.data?.preload &&
       [route.path, '*'].includes(preloadOptions.routePath) &&
       preloadOptions.preload
     );
