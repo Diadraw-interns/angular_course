@@ -1,0 +1,16 @@
+@if(product$ |async; as product){
+<div class="flex flex-col gap-4">
+    <div>{{product.productName}}</div>
+    <div>{{product.description}}</div>
+    @for (reviews of product.reviews; track reviews.id) {
+    <div class="flex flex-col gap-2 border border-black rounded p-2">
+        <div>{{reviews.userName}}</div>
+        <div>{{reviews.text}}</div>
+    </div>
+    } @empty {
+    <p>There are no reviews.</p>
+    }
+</div>
+}@else{
+<p>There is no with this id!</p>
+}

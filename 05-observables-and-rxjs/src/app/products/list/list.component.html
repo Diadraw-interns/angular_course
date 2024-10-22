@@ -1,0 +1,17 @@
+<div class="flex flex-wrap gap-4">
+    @for (product of products; track product.id) {
+    <div class="border border-black p-2 max-w-[200px] h-full rounded flex flex-col gap-2">
+        <div class="font-bold hover:underline"><a
+                [routerLink]="[ '/product-details', product.id ]">{{product.productName}}</a></div>
+        <div>{{product.description}}</div>
+        <div class="text-orange-400 font-semibold justify-end">
+            <div>
+                Single price: {{product.price | currency}}
+            </div>
+            <div>Buy all Price: {{product.buyAllPrice| currency}}</div>
+        </div>
+    </div>
+    } @empty {
+    <p>There are no products.</p>
+    }
+</div>
