@@ -1,0 +1,19 @@
+<div class="p-6 border rounded-md shadow-md bg-white">
+    <h2 class="text-xl font-bold mb-4">Cart</h2>
+
+    <div class="flex items-center mb-4">
+        <label for="quantity" class="mr-2">Quantity:</label>
+        <button class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">-</button>
+        <!-- Добавете количеството като стойност на input полето -->
+        <input id="quantity" type="number"  disabled class="w-16 text-center border rounded mx-2" />
+        <button class="px-2 py-1 bg-gray-300 rounded hover:bg-gray-400">+</button>
+    </div>
+
+    <p class="text-lg">Обща цена: <span class="font-bold">
+        <!-- {{ totalPrice() }} -->
+         лв.
+    </span></p>
+    <p class="text-sm text-red-500 mt-2">
+        <!-- {{errorMessage() }} -->
+    </p>
+</div>
