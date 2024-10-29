@@ -13,5 +13,13 @@ export class NavBarComponent {
       path: 'cart',
       label: 'Cart',
     },
+    {
+      path: 'products',
+      label: 'Products',
+    },
+    {
+      path: 'tags',
+      label: 'Tags',
+    },
   ];
 }
