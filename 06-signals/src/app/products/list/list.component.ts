@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, effect } from '@angular/core';
 import { ProductService } from '../product.service';
 import { Product } from '../product';
 import { CommonModule } from '@angular/common';
@@ -15,16 +15,22 @@ type ProductList = Product & {
 })
 export class ListComponent {
   // Вземете таговете от service-a
-  tags = signal([]);
+  tags = this.productService.tags;
+
   // Вземете селектирания таг от service-a
-  selectedTag = signal('');
+  selectedTag = this.productService.selectedTag;
 
   // Вземете всички продукти от service-a
-  products = signal<Product[]>([]);
+  products = this.productService.products;
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService) {
+    effect(() => {
+      console.log('this.productService.error();', this.productService.error());
+    });
+  }
 
   handleTagChange(tag: string) {
     // Променете селекирания таг в service-a
+    this.productService.setSelectedTag(tag);
   }
 }

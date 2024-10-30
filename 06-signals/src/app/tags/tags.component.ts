@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, effect, signal } from '@angular/core';
 import { ListComponent } from './list/list.component';
 import { FilterComponent } from './filter/filter.component';
 
@@ -10,7 +10,12 @@ import { FilterComponent } from './filter/filter.component';
 })
 export class TagsComponent {
   // Създайте сигнал, който съхранява стойността на филтъра.
-  // Когато филтърът е с дължина над 5 знака, отпечатайте съобщение в конзолата.
+  filter = signal('');
 
-  filter = '';
+  // Когато филтърът е с дължина над 5 знака, отпечатайте съобщение в конзолата.
+  logEffect = effect(() => {
+    if (this.filter().length > 5) {
+      console.log('over 5 letters', this.filter());
+    }
+  });
 }

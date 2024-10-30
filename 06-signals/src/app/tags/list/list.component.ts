@@ -9,12 +9,18 @@ import { ProductService } from '../../products/product.service';
 })
 export class ListComponent {
   // Създайте входен параметър от тип сигнал
-  @Input() filterString!: string;
+  filterString = input('', {
+    transform: (value: string) => value.toLowerCase(),
+  });
 
   // Създайте филтрирани тагове, на база входните данни от сигнала
   // При промяна филтрираните тагове трябва автоматично да се обновят
   // Използвайте таговете от ProductService
-  filteredTags = signal([]);
+  filteredTags = computed(() => {
+    return this.productService
+      .tags()
+      .filter((tag) => tag.toLowerCase().includes(this.filterString()));
+  });
 
   constructor(private productService: ProductService) {}
 }

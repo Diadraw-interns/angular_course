@@ -9,5 +9,5 @@ import { FormsModule } from '@angular/forms';
 })
 export class FilterComponent {
   // Създайте входен параметър, който да приема и променя стойността на полето.
-  filter = '';
+  filter = model('');
 }
