@@ -1,0 +1,8 @@
+<div class="grid grid-cols-2 gap-4">
+    @for(product of products; track product.id) {
+    <div class="flex flex-col gap-4 text-white bg-slate-600 rounded px-4 py-2">
+        <app-card [title]="product.title" [description]="product.description" [price]="product.price"
+            (onAddProductToCard)="onAddProductToCard(product)"></app-card>
+    </div>
+    }
+</div>
