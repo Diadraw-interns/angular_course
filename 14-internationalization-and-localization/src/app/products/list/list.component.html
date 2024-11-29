@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-4">
+    <h1 class="text-2xl font-bold">Products</h1>
+    <p>Discover the perfect blend of quality and convenience with our premium products</p>
+    <div class="grid grid-cols-4 gap-4">
+        @for(product of products; track product.id) {
+        <div class="flex flex-col gap-4 text-white bg-slate-600 rounded px-4 py-2">
+            <app-card [title]="product.title" [description]="product.description" [price]="product.price"
+                [imageUrl]="product.imageUrl" (onAddProductToCard)="onAddProductToCard(product)"></app-card>
+        </div>
+        }
+    </div>
+</div>
